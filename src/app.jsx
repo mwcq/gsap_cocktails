@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import { ScrollTrigger, SplitText } from 'gsap/all'
 import Navbar from './components/navbar'
 import Hero from './components/hero'
+import Cocktails from "./components/cocktails"
+import About from './components/about'
 
 // 注册ScrollTrigger,SplitText插件
 gsap.registerPlugin(ScrollTrigger, SplitText)
@@ -12,6 +14,8 @@ const App = () => {
         <main>
             <Navbar></Navbar>
             <Hero />
+            <Cocktails />
+            <About />
         </main>
     )
 }

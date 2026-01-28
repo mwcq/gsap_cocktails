@@ -47,7 +47,7 @@ const hero = () => {
             .to(".right-leaf", { y: 200 }, 0)
             .to(".left-leaf", { y: -200 }, 0)
 
-        const startValue = isMobile ? " top 50%" : 'center 60%';
+        const startValue = isMobile ? "top 50%" : 'center 60%';
         const endValue = isMobile ? "120% top" : "bottom top";
 
         // 视频动画
@@ -95,7 +95,7 @@ const hero = () => {
 
             </section>
             <div className="viedo absolute inset-0">
-                <video src="/videos/output.mp4" muted playsInline preload='auto' ref={videoRef}></video>
+                <video src="/videos/output.mp4" muted playsInline preload='auto' ref={videoRef}/>
             </div>
         </>
     )
