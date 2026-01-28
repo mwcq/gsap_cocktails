@@ -6,6 +6,7 @@ import Hero from './components/hero'
 import Cocktails from "./components/cocktails"
 import About from './components/about'
 import Art from './components/art'
+import Menu from './components/menu'
 
 // 注册ScrollTrigger,SplitText插件
 gsap.registerPlugin(ScrollTrigger, SplitText)
@@ -18,6 +19,7 @@ const App = () => {
             <Cocktails />
             <About />
             <Art />
+            <Menu />
         </main>
     )
 }
