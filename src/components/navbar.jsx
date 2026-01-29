@@ -1,24 +1,27 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React from 'react'
+import { useLanguage } from '../i18n.jsx'
 
 const navbar = () => {
+    const { lang, toggleLanguage, translations } = useLanguage()
+
     const navBarLinks = [
         {
             id: "cocktails",
-            title: "鸡尾酒",
+            title: translations.navbar.links.cocktails,
         },
         {
             id: "about",
-            title: "关于我们",
+            title: translations.navbar.links.about,
         },
         {
             id: "work",
-            title: "艺术",
+            title: translations.navbar.links.work,
         },
         {
             id: "contact",
-            title: "联系我们",
+            title: translations.navbar.links.contact,
         },
 
     ]
@@ -43,7 +46,7 @@ const navbar = () => {
             <div>
                 <a href="#homes" className='flex items-center gap-2'>
                     <img src="/images/logo.png" alt="logo" />
-                    <p>Velvet Pour</p>
+                    <p>{translations.navbar.logo}</p>
                 </a>
                 <ul>
                     {navBarLinks.map((item) => {
@@ -52,6 +55,14 @@ const navbar = () => {
                         )
                     })}
                 </ul>
+                <button
+                    type="button"
+                    onClick={toggleLanguage}
+                    className="ml-4 px-3 py-1 border border-white/60 text-xs rounded-full hover:bg-white/10 transition"
+                    aria-label={lang === 'en' ? '切换为中文' : 'Switch to English'}
+                >
+                    {lang === 'en' ? 'EN / 中文' : '中文 / EN'}
+                </button>
             </div>
         </nav>
     )

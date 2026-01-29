@@ -7,20 +7,25 @@ import Cocktails from "./components/cocktails"
 import About from './components/about'
 import Art from './components/art'
 import Menu from './components/menu'
+import Contact from './components/contact'
+import { LanguageProvider } from './i18n.jsx'
 
 // 注册ScrollTrigger,SplitText插件
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const App = () => {
     return (
-        <main>
-            <Navbar></Navbar>
-            <Hero />
-            <Cocktails />
-            <About />
-            <Art />
-            <Menu />
-        </main>
+        <LanguageProvider>
+            <main>
+                <Navbar />
+                <Hero />
+                <Cocktails />
+                <About />
+                <Art />
+                <Menu />
+                <Contact />
+            </main>
+        </LanguageProvider>
     )
 }
 

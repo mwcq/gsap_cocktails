@@ -2,21 +2,14 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import React from 'react'
 import { useMediaQuery } from 'react-responsive';
+import { useLanguage } from '../i18n.jsx';
 
 const art = () => {
-    const goodLists = [
-        "Handpicked ingredients",
-        "Signature techniques",
-        "Bartending artistry in action",
-        "Freshly muddled flavors",
-    ];
+    const { translations } = useLanguage();
 
-    const featureLists = [
-        "Perfectly balanced blends",
-        "Garnished to perfection",
-        "Ice-cold every time",
-        "Expertly shaken & stirred",
-    ];
+    const goodLists = translations.art.goodList;
+
+    const featureLists = translations.art.featureList;
 
     const isMobile = useMediaQuery({ maxWidth: 767 })
 
@@ -57,7 +50,7 @@ const art = () => {
     return (
         <div id='art'>
             <div className="container mx-auto h-full pt-20">
-                <h2 className="will-fade">The ART</h2>
+                <h2 className="will-fade">{translations.art.sectionTitle}</h2>
 
                 <div className="content">
                     <ul className="space-y-4 will-fade">
@@ -88,10 +81,10 @@ const art = () => {
                 </div>
 
                 <div className="masked-container">
-                    <h2 className="will-fade">Sip-Worthy Perfection</h2>
+                    <h2 className="will-fade">{translations.art.maskedTitle}</h2>
                     <div id="masked-content">
-                        <h3>Made with Craft, Poured with Passion</h3>
-                        <p>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
+                        <h3>{translations.art.maskedHeading}</h3>
+                        <p>{translations.art.maskedText}</p>
                     </div>
                 </div>
             </div>

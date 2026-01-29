@@ -2,11 +2,11 @@
 import { useGSAP } from '@gsap/react'
 import React, { useRef, useState } from 'react'
 import gsap from 'gsap'
+import { useLanguage } from '../i18n.jsx'
 
 const menu = () => {
 
-
-
+    const { translations } = useLanguage()
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const contentRef = useRef()
@@ -90,10 +90,10 @@ const menu = () => {
             <img src="/images/slider-right-leaf.png" alt="right-leaf" id='m-right-leaf' />
 
             <h2 id="menu-heading" className='sr-only'>
-                Cocktail Menu
+                {translations.menu.sectionSrTitle}
             </h2>
 
-            <nav className='cocktail-tabs' aria-label=' Cocktail Navigation'>
+            <nav className='cocktail-tabs' aria-label={translations.menu.navAriaLabel}>
                 {sliderLists.map((item, index) => {
                     const isActive = index === currentIndex
                     return (
@@ -129,7 +129,7 @@ const menu = () => {
                 </div>
                 <div className="recipe">
                     <div ref={contentRef} className='info'>
-                        <p className='sp'>Recipe for:</p>
+                        <p className='sp'>{translations.menu.recipeFor}</p>
                         <p id="title">{currentCocktail.name}</p>
                     </div>
 

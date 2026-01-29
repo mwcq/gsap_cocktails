@@ -1,9 +1,10 @@
 import { useGSAP } from '@gsap/react'
 import React from 'react'
 import gsap from 'gsap'
+import { useLanguage } from '../i18n.jsx'
 
 const cocktails = () => {
-
+    const { translations } = useLanguage()
     const cocktailList = [{
         name: "Chapel Hill Shiraz",
         country: "AU",
@@ -80,7 +81,7 @@ const cocktails = () => {
             <img src="/images/cocktail-right-leaf.png" alt="right-leaf" id='c-right-leaf' />
             <div className="list">
                 <div className="popular">
-                    <h2>最受欢迎:</h2>
+                    <h2>{translations.cocktails.popularTitle}</h2>
                     <ul>
                         {cocktailList.map((item) => {
                             return (
@@ -97,7 +98,7 @@ const cocktails = () => {
                 </div>
 
                 <div className="loved">
-                    <h2>最受欢迎的无酒精饮品:</h2>
+                    <h2>{translations.cocktails.mocktailTitle}</h2>
                     <ul>
                         {mockTailLists.map((item) => {
                             return (
